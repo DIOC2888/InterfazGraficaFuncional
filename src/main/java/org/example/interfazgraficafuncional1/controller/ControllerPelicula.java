@@ -94,10 +94,9 @@ public class ControllerPelicula {
                 Double.parseDouble(txtRecaudacion.getText()),
                 Double.parseDouble(txtCostos.getText())
         );
-                peliculas.add(pelicula);
-                showAlert(Alert.AlertType.INFORMATION,"Registro exitoso","La película ha sido registrada correctamente");
 
-
+        peliculas.add(pelicula);
+        showAlert(Alert.AlertType.INFORMATION, "Registro exitoso", "La película ha sido registrada correctamente");
 
     }
     private void showAlert(Alert.AlertType type, String title, String message){
@@ -109,17 +108,58 @@ public class ControllerPelicula {
     }
 
     public boolean validateForm() {
+
         String titulo = txtTitulo.getText().trim();
         String director = txtDirector.getText().trim();
         String genero = txtGenero.getText().trim();
         String recaudacion = txtRecaudacion.getText().trim();
         String costos = txtCostos.getText().trim();
-        if(titulo.isEmpty() || director.isEmpty() || genero.isEmpty() ||  recaudacion.isEmpty() || costos.isEmpty()){
-            showAlert(Alert.AlertType.WARNING,"Datos incompletos", "Complete todos los campos para continuar");
-            return false;
 
-       }
+        if (titulo.isEmpty() ||
+                director.isEmpty() ||
+                genero.isEmpty() ||
+                recaudacion.isEmpty() ||
+                costos.isEmpty()) {
+
+            showAlert(
+                    Alert.AlertType.WARNING,
+                    "Datos incompletos",
+                    "Complete todos los campos para continuar"
+            );
+
+            return false;
+        }
+
+
+        if (!esDouble(recaudacion)) {
+            showAlert(
+                    Alert.AlertType.WARNING,
+                    "Dato inválido",
+                    "La recaudación debe ser un número válido"
+            );
+
+            return false;
+        }
+
+        if (!esDouble(costos)) {
+            showAlert(
+                    Alert.AlertType.WARNING,
+                    "Dato inválido",
+                    "Los costos deben ser un número válido"
+            );
+
+            return false;
+        }
+
         return true;
+    }
+    private boolean esDouble(String texto) {
+        try {
+            Double.parseDouble(texto);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 
