@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="511.0" prefWidth="766.0" style="-fx-background-color: A9E7EB;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.interfazgraficafuncional1.controller.ControllerPelicula">
+   <children>
+      <Label layoutX="275.0" layoutY="14.0" prefHeight="22.0" prefWidth="258.0" text="Registro de películas">
+         <font>
+            <Font name="Bell MT" size="29.0" />
+         </font>
+      </Label>
+      <Line endX="615.2000122070312" endY="7.62939453125E-6" layoutX="124.0" layoutY="58.0" opacity="0.17" startX="-100.0" />
+      <GridPane layoutX="30.0" layoutY="98.0" prefHeight="152.0" prefWidth="349.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.20001220703125" minWidth="10.0" prefWidth="139.99999542236327" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.00000762939453" minWidth="10.0" prefWidth="183.20000457763672" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Título:" />
+            <Label text="Director:" GridPane.rowIndex="1" />
+            <Label text="Género:" GridPane.rowIndex="2" />
+            <Label text="Recaudación en taquilla:" GridPane.rowIndex="3" />
+            <Label text="Costos de producción:" GridPane.rowIndex="4" />
+            <TextField fx:id="txtTitulo" promptText="Ej. Obssesion" GridPane.columnIndex="1" />
+            <TextField fx:id="txtDirector" promptText="Ej. Curry Barker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtRecaudacion" promptText="\$509,876,715" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCostos" promptText="\$750,000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtGenero" promptText="Ej. Terror" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tblPeliculas" layoutX="23.0" layoutY="265.0" prefHeight="200.0" prefWidth="707.0">
+        <columns>
+          <TableColumn fx:id="colTitulo" prefWidth="110.40002822875977" text="Título" />
+          <TableColumn fx:id="colDirector" prefWidth="143.19993591308594" text="Director" />
+            <TableColumn fx:id="colGenero" prefWidth="118.4000244140625" text="Género" />
+            <TableColumn fx:id="colRecaudacion" prefWidth="172.00006103515625" text="Recaudación en taquilla" />
+            <TableColumn fx:id="colCostos" minWidth="0.0" prefWidth="164.0" text="Costos de producción" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnRegistrar" layoutX="432.0" layoutY="98.0" mnemonicParsing="false" onAction="#clickRegistrar" style="-fx-background-color: C5E5E8;" text="Registrar película" />
+      <Button fx:id="btnLimpiar" layoutX="458.0" layoutY="138.0" mnemonicParsing="false" onAction="#clickLimpiar" style="-fx-background-color: C5E5E8;" text="Limpiar" />
+      <Button fx:id="btnSalir" layoutX="466.0" layoutY="181.0" mnemonicParsing="false" onAction="#clickSalir" style="-fx-background-color: C5E5E8;" text="Salir" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0099A8;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.interfazgraficafuncional1.controller.ControllerMenu">
+   <children>
+      <VBox layoutX="20.8" layoutY="39.2" prefHeight="26.0" prefWidth="554.0" style="-fx-background-color: #E9E9E9;" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="39.0">
+         <children>
+            <MenuBar prefHeight="26.0" prefWidth="251.0" style="-fx-background-color: #E9E9E9;">
+              <menus>
+                <Menu mnemonicParsing="false" text="Estudiantes">
+                  <items>
+                    <MenuItem fx:id="miEstudiante" mnemonicParsing="false" onAction="#clickEstudiante" text="Registrar un estudiante" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Peliculas">
+                  <items>
+                    <MenuItem fx:id="miPeliculas" mnemonicParsing="false" onAction="#clickPeliculas" text="Registrar una película" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Desarrollador">
+                  <items>
+                    <MenuItem fx:id="miDesarrollador" mnemonicParsing="false" onAction="#clickDesarrollador" text="Mostrar información del desarrollador" />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="miCerrarPrograma" mnemonicParsing="false" onAction="#clickSalir" text="Cerrar el programa" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickEstudiante" text="Registrar estudiante" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickPeliculas" text="Registrar película" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickDesarrollador" text="Mostrar información del desarrollador" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </MenuBar>
+         </children>
+      </VBox>
+
+      <Label layoutX="34.0" layoutY="109.0" text="Construcción de interfaz gráfica funcional en JavaFX" textFill="#fffbfb" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Bell MT" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="168.0" layoutY="139.0" text="Seleccione una opción de arriba para continuar" textFill="#f4f4f4" />
+      <ImageView fitHeight="190.0" fitWidth="278.0" layoutX="158.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../files/FotoMenu.png" />
+         </image>
+         <effect>
+            <DropShadow height="219.85" radius="107.67" spread="0.34" width="212.83">
+               <color>
+                  <Color red="0.45185184478759766" green="0.9634568095207214" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
